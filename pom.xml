@@ -5,7 +5,7 @@
 
 	<groupId>org.fross</groupId>
 	<artifactId>library</artifactId>
-	<version>2021.10.24</version>
+	<version>2022.06.28</version>
 	<packaging>jar</packaging>
 
 	<name>library</name>
@@ -69,13 +69,6 @@
 	</build>
 
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/gnu.getopt/java-getopt -->
-		<dependency>
-			<groupId>gnu.getopt</groupId>
-			<artifactId>java-getopt</artifactId>
-			<version>1.0.13</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.fusesource.jansi/jansi -->
 		<dependency>
 			<groupId>org.fusesource.jansi</groupId>
