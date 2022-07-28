@@ -33,20 +33,18 @@ import java.util.concurrent.TimeUnit;
 import org.fusesource.jansi.Ansi;
 
 /**
- * Spinner is a simple class that displays a text based graphic that 
- * can be shown while other work is being done.
+ * Spinner is a simple class that displays a text based graphic that can be shown while other work is being done.
  * 
- * The spinner process starts a new thread and when the work in the main
- * program is complete, it's stopped.
+ * The spinner process starts a new thread and when the work in the main program is complete, it's stopped.
  * 
- * Usage:
- * 	Start Spinner:
- * 		SpinnerBouncyBall spinner = new SpinnerBouncyBall();
- * 		spinner.start();
+ * Usage: 
+ *   Start Spinner: 
+ *     SpinnerBouncyBall spinner = new SpinnerBouncyBall(); 
+ *     spinner.start();
  * 
- *  Stop Spinner:
- *  	spinner.interrupt();
- *  
+ *   Stop Spinner: 
+ *     spinner.interrupt();
+ * 
  * @author Michael
  *
  */

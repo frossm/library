@@ -56,8 +56,8 @@ public class Output {
 	/**
 	 * printColorln(): Print to the console with the provided foreground color
 	 * 
-	 * Allowable colors are: - Ansi.Color.BLACK - Ansi.Color.RED - Ansi.Color.GREEN - Ansi.Color.YELLOW
-	 * - Ansi.Color.BLUE - Ansi.Color.MAGENTA - Ansi.Color.CYAN - Ansi.Color.WHITE - Ansi.Color.DEFAULT
+	 * Allowable colors are: - Ansi.Color.BLACK - Ansi.Color.RED - Ansi.Color.GREEN - Ansi.Color.YELLOW - Ansi.Color.BLUE -
+	 * Ansi.Color.MAGENTA - Ansi.Color.CYAN - Ansi.Color.WHITE - Ansi.Color.DEFAULT
 	 * 
 	 * @param Color
 	 * @param msg
@@ -73,8 +73,8 @@ public class Output {
 	/**
 	 * printColor(): Print to the console with the provided foreground color
 	 * 
-	 * Allowable colors are: - Ansi.Color.BLACK - Ansi.Color.RED - Ansi.Color.GREEN - Ansi.Color.YELLOW
-	 * - Ansi.Color.BLUE - Ansi.Color.MAGENTA - Ansi.Color.CYAN - Ansi.Color.WHITE - Ansi.Color.DEFAULT
+	 * Allowable colors are: - Ansi.Color.BLACK - Ansi.Color.RED - Ansi.Color.GREEN - Ansi.Color.YELLOW - Ansi.Color.BLUE -
+	 * Ansi.Color.MAGENTA - Ansi.Color.CYAN - Ansi.Color.WHITE - Ansi.Color.DEFAULT
 	 * 
 	 * @param fclr
 	 * @param msg
@@ -104,8 +104,7 @@ public class Output {
 	}
 
 	/**
-	 * println(): Basic System.out.println call. It's here so all text output can go through this
-	 * function.
+	 * println(): Basic System.out.println call. It's here so all text output can go through this function.
 	 * 
 	 * @param msg
 	 */

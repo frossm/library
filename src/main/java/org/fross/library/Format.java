@@ -34,8 +34,7 @@ import org.fusesource.jansi.Ansi;
 public class Format {
 
 	/**
-	 * Comma Return a string with comma separators at the correct intervals. Supports decimal places and
-	 * a negative sign.
+	 * Comma Return a string with comma separators at the correct intervals. Supports decimal places and a negative sign.
 	 * 
 	 * @param num - Number to comma-ize
 	 * @return
@@ -53,8 +52,7 @@ public class Format {
 	}
 
 	/**
-	 * Comma Return a string with comma separators at the correct intervals. Supports decimal places and
-	 * a negative sign.
+	 * Comma Return a string with comma separators at the correct intervals. Supports decimal places and a negative sign.
 	 * 
 	 * @param num - Number to comma-ize
 	 * @return
@@ -64,8 +62,7 @@ public class Format {
 	}
 
 	/**
-	 * HumanReadableBytes(): Take a long number in bytes and return a more human readable format
-	 * Reference:
+	 * HumanReadableBytes(): Take a long number in bytes and return a more human readable format Reference:
 	 * https://stackoverflow.com/questions/3758606/how-to-convert-byte-size-into-human-readable-format-in-java
 	 * https://www.geeksforgeeks.org/how-to-calculate-log-base-2-of-an-integer-in-java/?ref=leftbar-rightbar
 	 * 
@@ -93,11 +90,10 @@ public class Format {
 	}
 
 	/**
-	 * CenterText(): Center the text within the width provided adding the pre and post string. Returns a
-	 * string that can be printed.
+	 * CenterText(): Center the text within the width provided adding the pre and post string. Returns a string that can be
+	 * printed.
 	 * 
-	 * Approach: ((Width - length of text - length of pre - length of post) / 2 ) = spaces to add at the
-	 * front & back
+	 * Approach: ((Width - length of text - length of pre - length of post) / 2 ) = spaces to add at the front & back
 	 * 
 	 * @param width
 	 * @param lineToCenter
@@ -115,8 +111,7 @@ public class Format {
 	}
 
 	/**
-	 * CenterText(): Center the text within the width provided. If no pre and post are provided, assume
-	 * spaces
+	 * CenterText(): Center the text within the width provided. If no pre and post are provided, assume spaces
 	 * 
 	 * @param width
 	 * @param lineToCenter

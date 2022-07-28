@@ -43,7 +43,7 @@ public class GitHub {
 		String returnString = null;
 
 		Output.debugPrint("URL for UpdateCheck: " + finalURL);
-		
+
 		try {
 			// Read the tags from the GitHub Tags API
 			String githubPage = URLOperations.ReadURL(finalURL);
