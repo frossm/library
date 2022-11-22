@@ -26,7 +26,10 @@
  ***************************************************************************************************************/
 package org.fross.library;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
@@ -40,24 +43,69 @@ public class URLOperations {
 	 * @throws Exception
 	 */
 	public static String ReadURL(String urlString) throws Exception {
-		BufferedReader Reader = null;
+		BufferedReader reader = null;
 
 		try {
 			URL url = new URL(urlString);
-			Reader = new BufferedReader(new InputStreamReader(url.openStream()));
+			reader = new BufferedReader(new InputStreamReader(url.openStream()));
 			StringBuilder buffer = new StringBuilder();
 			int read;
 			char[] chars = new char[1024];
-			while ((read = Reader.read(chars)) != -1) {
+			while ((read = reader.read(chars)) != -1) {
 				buffer.append(chars, 0, read);
 			}
 
 			return buffer.toString();
 
 		} finally {
-			if (Reader != null) {
-				Reader.close();
+			if (reader != null) {
+				reader.close();
 			}
+		}
+	}
+
+	/**
+	 * DownloadFileFromURL(): Download a file from a URL to the provided directory
+	 * 
+	 * @param urlStr
+	 * @param file
+	 * @throws IOException
+	 */
+	public static void DownloadURLToFile(String urlStr, String file) throws IOException {
+		final int blockSize = 1024;
+		URL url = new URL(urlStr);
+		BufferedInputStream bis = new BufferedInputStream(url.openStream());
+		FileOutputStream fos = new FileOutputStream(file);
+		byte[] buffer = new byte[blockSize];
+		int count = 0;
+
+		// Download chunks of the file and write them out
+		while ((count = bis.read(buffer, 0, blockSize)) != -1) {
+			fos.write(buffer, 0, count);
+		}
+
+		// Cleanup by closing the streams
+		fos.close();
+		bis.close();
+	}
+
+	/**
+	 * main(): Used for testing DownloadFileFromURL()
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String url = args[0];
+		String fullFilePathAndName = args[1].replace('\\', '/');
+
+		// Download Test
+		try {
+			System.out.println("Testing URL Download to File:");
+			System.out.println("   Downloading: " + url);
+			System.out.println("   Destination: " + fullFilePathAndName);
+			DownloadURLToFile(url, fullFilePathAndName);
+		} catch (IOException ex) {
+			System.out.println("An IO Error Occured: Arguments are URL, DownloadedFilePath\n" + ex.getMessage());
 		}
 	}
 
