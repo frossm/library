@@ -3,7 +3,7 @@
 
 	<groupId>org.fross</groupId>
 	<artifactId>library</artifactId>
-	<version>2022.11.21</version>
+	<version>2023.05.21</version>
 	<packaging>jar</packaging>
 
 	<name>library</name>

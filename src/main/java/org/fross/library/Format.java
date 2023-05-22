@@ -26,6 +26,7 @@
  ***************************************************************************************************************/
 package org.fross.library;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -60,6 +61,25 @@ public class Format {
 	public static String Comma(Long num) {
 		return NumberFormat.getInstance().format(num);
 	}
+	
+	/**
+	 * Comma Return a string with comma separators at the correct intervals. Supports decimal places and a negative sign.
+	 * 
+	 * @param num - Number to comma-ize
+	 * @return
+	 */
+	public static String Comma(String num) {
+		DecimalFormat df = null;
+
+		try {
+			df = new DecimalFormat("#,###.00#######");
+		} catch (Exception Ex) {
+			Output.printColorln(Ansi.Color.RED, "ERROR Adding Commas to numbers:\n" + Ex.getMessage());
+		}
+
+		return (String.valueOf(df.format(new BigDecimal(num))));
+	}
+
 
 	/**
 	 * HumanReadableBytes(): Take a long number in bytes and return a more human readable format Reference:

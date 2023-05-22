@@ -1,5 +1,6 @@
 /**
- * 
+ * Automated unit tests for library Format methods
+ *
  */
 package org.fross.library;
 
@@ -22,6 +23,7 @@ class FormatTest {
 		assertEquals("999.9999", Format.Comma(999.9999));
 		assertEquals(".003", Format.Comma(.003));
 		assertEquals("1,000.00", Format.Comma(Double.valueOf(1000)));
+		assertEquals("-.123456", Format.Comma(-0.123456));
 	}
 
 	/**
@@ -33,6 +35,20 @@ class FormatTest {
 		assertEquals("999", Format.Comma(999L));
 		assertEquals("123,456,789", Format.Comma(123456789L));
 		assertEquals("1,000", Format.Comma(1000L));
+	}
+	
+	/** 
+	 * Test Comma when sending a string
+	 */
+	@Test
+	void testCommaString() {
+		assertEquals("1,234,567.00", Format.Comma("1234567"));
+		assertEquals("999.00", Format.Comma("999"));
+		assertEquals("963.11", Format.Comma("963.11"));
+		assertEquals("5,123.11", Format.Comma("5123.11"));
+		assertEquals(".123456", Format.Comma(".123456"));
+		assertEquals("-.123456", Format.Comma("-.123456"));
+		assertEquals("-12,345,678.123456", Format.Comma("-12345678.123456"));
 	}
 
 	/**
