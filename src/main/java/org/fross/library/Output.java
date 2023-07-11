@@ -71,6 +71,22 @@ public class Output {
 	}
 
 	/**
+	 * printColorln(): Overloaded. Added background parameter
+	 * 
+	 * @param fclr
+	 * @param bclr
+	 * @param msg
+	 */
+	public static void printColorln(Ansi.Color fclr, Ansi.Color bclr, String msg) {
+		if (colorizedOutput == true) {
+			System.out.println(ansi().a(Attribute.INTENSITY_BOLD).fg(fclr).bg(bclr).a(msg).reset());
+			Ansi.ansi().reset();
+		} else {
+			print(msg);
+		}
+	}
+
+	/**
 	 * printColor(): Print to the console with the provided foreground color
 	 * 
 	 * Allowable colors are: - Ansi.Color.BLACK - Ansi.Color.RED - Ansi.Color.GREEN - Ansi.Color.YELLOW - Ansi.Color.BLUE -
@@ -140,6 +156,18 @@ public class Output {
 	public static void debugPrint(String msg) {
 		if (Debug.query() == true) {
 			Output.printColorln(Ansi.Color.RED, "DEBUG:  " + msg);
+		}
+	}
+
+	/**
+	 * debugPrintNNL(): Print the provided text in RED with the preface of DEBUG:. This no-new-line method does not add the
+	 * newline
+	 * 
+	 * @param msg
+	 */
+	public static void debugPrintNNL(String msg) {
+		if (Debug.query() == true) {
+			Output.printColor(Ansi.Color.RED, "DEBUG:  " + msg);
 		}
 	}
 
