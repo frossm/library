@@ -149,23 +149,22 @@ public class Output {
 	}
 
 	/**
-	 * debugPrint(): Print the provided text in RED with the preface of DEBUG:
+	 * debugPrintln(): Print the provided text in RED with the preface of DEBUG: with a newline
 	 * 
 	 * @param msg
 	 */
-	public static void debugPrint(String msg) {
+	public static void debugPrintln(String msg) {
 		if (Debug.query() == true) {
 			Output.printColorln(Ansi.Color.RED, "DEBUG:  " + msg);
 		}
 	}
 
 	/**
-	 * debugPrintNNL(): Print the provided text in RED with the preface of DEBUG:. This no-new-line method does not add the
-	 * newline
+	 * debugPrint(): Print the provided text in RED with the preface of DEBUG: and no new line at the end
 	 * 
 	 * @param msg
 	 */
-	public static void debugPrintNNL(String msg) {
+	public static void debugPrint(String msg) {
 		if (Debug.query() == true) {
 			Output.printColor(Ansi.Color.RED, "DEBUG:  " + msg);
 		}

@@ -63,21 +63,21 @@ public class Debug {
 	 * displaySysInfo(): Display some system level information used in Debug Mode
 	 */
 	public static void displaySysInfo() {
-		Output.debugPrint("------------------------------------------------------------");
-		Output.debugPrint("System Information:");
-		Output.debugPrint("  - class.path:     " + System.getProperty("java.class.path"));
-		Output.debugPrint("  - java.home:      " + System.getProperty("java.home"));
-		Output.debugPrint("  - java.vendor:    " + System.getProperty("java.vendor"));
-		Output.debugPrint("  - java.version:   " + System.getProperty("java.version"));
-		Output.debugPrint("  - os.name:        " + System.getProperty("os.name"));
-		Output.debugPrint("  - os.version:     " + System.getProperty("os.version"));
-		Output.debugPrint("  - os.arch:        " + System.getProperty("os.arch"));
-		Output.debugPrint("  - user.name:      " + System.getProperty("user.name"));
-		Output.debugPrint("  - user.home:      " + System.getProperty("user.home"));
-		Output.debugPrint("  - user.dir:       " + System.getProperty("user.dir"));
-		Output.debugPrint("  - file.separator: " + System.getProperty("file.separator"));
-		Output.debugPrint("  - library.path:   " + System.getProperty("java.library.path"));
-		Output.debugPrint("------------------------------------------------------------");
+		Output.debugPrintln("------------------------------------------------------------");
+		Output.debugPrintln("System Information:");
+		Output.debugPrintln("  - class.path:     " + System.getProperty("java.class.path"));
+		Output.debugPrintln("  - java.home:      " + System.getProperty("java.home"));
+		Output.debugPrintln("  - java.vendor:    " + System.getProperty("java.vendor"));
+		Output.debugPrintln("  - java.version:   " + System.getProperty("java.version"));
+		Output.debugPrintln("  - os.name:        " + System.getProperty("os.name"));
+		Output.debugPrintln("  - os.version:     " + System.getProperty("os.version"));
+		Output.debugPrintln("  - os.arch:        " + System.getProperty("os.arch"));
+		Output.debugPrintln("  - user.name:      " + System.getProperty("user.name"));
+		Output.debugPrintln("  - user.home:      " + System.getProperty("user.home"));
+		Output.debugPrintln("  - user.dir:       " + System.getProperty("user.dir"));
+		Output.debugPrintln("  - file.separator: " + System.getProperty("file.separator"));
+		Output.debugPrintln("  - library.path:   " + System.getProperty("java.library.path"));
+		Output.debugPrintln("------------------------------------------------------------");
 	}
 
 }

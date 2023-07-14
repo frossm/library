@@ -42,7 +42,7 @@ public class GitHub {
 		String finalURL = "https://api.github.com/repos/frossm/" + app + "/tags";
 		String returnString = null;
 
-		Output.debugPrint("URL for UpdateCheck: " + finalURL);
+		Output.debugPrintln("URL for UpdateCheck: " + finalURL);
 
 		try {
 			// Read the tags from the GitHub Tags API
