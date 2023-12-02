@@ -3,7 +3,7 @@
  * 
  *  Library holds methods and classes frequently used by my programs.
  * 
- *  Copyright (c) 2019-2021 Michael Fross
+ *  Copyright (c) 2019-2024 Michael Fross
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -31,6 +31,7 @@ import static org.fusesource.jansi.Ansi.ansi;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.Ansi.Attribute;
 import org.fusesource.jansi.Ansi.Erase;
+import org.fusesource.jansi.AnsiConsole;
 
 public class Output {
 	static boolean colorizedOutput = true;		// By default, color is enabled
@@ -87,6 +88,20 @@ public class Output {
 	}
 
 	/**
+	 * printColorln(): Overloaded. FG Color can be selected by an index number 0-256
+	 * 
+	 * @param colorIndexFG
+	 * @param msg
+	 */
+	public static void printColorln(int colorIndexFG, String msg) {
+		if (colorizedOutput == true) {
+			System.out.println(ansi().fg(colorIndexFG).a(msg).reset());
+		} else {
+			println(msg);
+		}
+	}
+
+	/**
 	 * printColor(): Print to the console with the provided foreground color
 	 * 
 	 * Allowable colors are: - Ansi.Color.BLACK - Ansi.Color.RED - Ansi.Color.GREEN - Ansi.Color.YELLOW - Ansi.Color.BLUE -
@@ -116,6 +131,34 @@ public class Output {
 			Ansi.ansi().reset();
 		} else {
 			print(msg);
+		}
+	}
+
+	/**
+	 * printColor(): Overloaded. FG Color can be selected by an index number 0-256
+	 * 
+	 * @param colorIndexFG
+	 * @param msg
+	 */
+	public static void printColor(int colorIndexFG, String msg) {
+		if (colorizedOutput == true) {
+			System.out.println(ansi().fg(colorIndexFG).a(msg).reset());
+		} else {
+			println(msg);
+		}
+	}
+	
+	/**
+	 * printColor(): Overloaded. FG & BG Color can be selected by an index number 0-256
+	 * 
+	 * @param colorIndexFG
+	 * @param msg
+	 */
+	public static void printColor(int colorIndexFG, int colorIndexBG, String msg) {
+		if (colorizedOutput == true) {
+			System.out.println(ansi().fg(colorIndexFG).bg(colorIndexBG).a(msg).reset());
+		} else {
+			println(msg);
 		}
 	}
 
@@ -182,6 +225,26 @@ public class Output {
 			// Position cursor at the top
 			System.out.println(ansi().cursor(0, 0));
 		}
+	}
+
+	/**
+	 * JAnsi256Test(): Simple printout of colors to test jAnsi 256 on terminals
+	 * 
+	 */
+	public static void JAnsi256Test() {
+		// Test Foregrounds
+		Ansi ansi = Ansi.ansi();
+		for (int index = 0; index < 256; index++) {
+			ansi.fg(index).a("FG %d ".formatted(index));
+		}
+		AnsiConsole.out().println(ansi);
+
+		// Test Backgrounds
+		ansi = Ansi.ansi();
+		for (int index = 0; index < 256; index++) {
+			ansi.bg(index).a("BG %d ".formatted(index));
+		}
+		AnsiConsole.out().println(ansi);
 	}
 
 }
