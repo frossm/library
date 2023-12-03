@@ -235,14 +235,17 @@ public class Output {
 		// Test Foregrounds
 		Ansi ansi = Ansi.ansi();
 		for (int index = 0; index < 256; index++) {
-			ansi.fg(index).a("FG %d ".formatted(index));
+			// ansi.fg(index).a("FG %d ".formatted(index));
+			System.out.print(ansi().fg(index).a(String.format("FG%d  ", index)).reset());
 		}
 		AnsiConsole.out().println(ansi);
+		System.out.println("\n");
 
 		// Test Backgrounds
 		ansi = Ansi.ansi();
 		for (int index = 0; index < 256; index++) {
-			ansi.bg(index).a("BG %d ".formatted(index));
+			// ansi.bg(index).a("BG %d ".formatted(index));
+			System.out.print(ansi().bg(index).a(String.format("BG%d  ", index)).reset());
 		}
 		AnsiConsole.out().println(ansi);
 	}
