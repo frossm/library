@@ -65,6 +65,39 @@ public class Date {
 	}
 
 	/**
+	 * getCurrentHour(): Return an integer value for the current hour
+	 * 
+	 * @return
+	 */
+	public static int getCurrentHour() {
+		java.util.Calendar jc = java.util.Calendar.getInstance();
+		int hour = jc.get(java.util.Calendar.HOUR);
+		return hour;
+	}
+
+	/**
+	 * getCurrentMinute(): Return an integer value for the current minute
+	 * 
+	 * @return
+	 */
+	public static int getCurrentMinute() {
+		java.util.Calendar jc = java.util.Calendar.getInstance();
+		int min = jc.get(java.util.Calendar.MINUTE);
+		return min;
+	}
+
+	/**
+	 * getCurrentSecond(): Return an integer value for the current second
+	 * 
+	 * @return
+	 */
+	public static int getCurrentSecond() {
+		java.util.Calendar jc = java.util.Calendar.getInstance();
+		int sec = jc.get(java.util.Calendar.SECOND);
+		return sec;
+	}
+
+	/**
 	 * getCurrentMonthNameLong(): Return full name of the current month
 	 * 
 	 * @return
